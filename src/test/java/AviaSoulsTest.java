@@ -75,11 +75,11 @@ public class AviaSoulsTest {
     public void shouldFastTimeFromSipToLedComparator() {
 
         AviaSouls manager = new AviaSouls();
-        Ticket ticket1 = new Ticket("SIP", "LED", 7_500, 21, 24); //2
+        Ticket ticket1 = new Ticket("SIP", "LED", 7_500, 21, 24); //3
         Ticket ticket2 = new Ticket("SIP", "LED", 6_000, 8, 11);  //3
         Ticket ticket3 = new Ticket("SIP", "LED", 17_600, 3, 12); //9
         Ticket ticket4 = new Ticket("SIP", "LED", 4_600, 14, 17); //3
-        Ticket ticket5 = new Ticket("SIP", "LED", 7_500, 18, 22);  //4
+        Ticket ticket5 = new Ticket("SIP", "LED", 7_500, 18, 22); //4
         Ticket ticket6 = new Ticket("LED", "MSQ", 11_500, 7, 9);
         Ticket ticket7 = new Ticket("SIP", "LED", 60_000, 1, 3); //2
         Ticket ticket8 = new Ticket("LED", "MSQ", 7_900, 13, 15);
@@ -99,7 +99,7 @@ public class AviaSoulsTest {
 
         Comparator<Ticket> comparator = new TicketTimeComparator();
 
-        Ticket[] expected = {ticket1, ticket7, ticket2, ticket4, ticket9, ticket5, ticket3};
+        Ticket[] expected = {ticket7, ticket1, ticket2, ticket4, ticket9, ticket5, ticket3};
         Ticket[] actual = manager.search("SIP", "LED", comparator);
 
 
@@ -144,7 +144,7 @@ public class AviaSoulsTest {
 
     @Test //5 // пустой массив
 
-    public void shouldLowPriceFromSipToLed1() {
+    public void shouldLowPriceFromSipToLedEmpty() {
 
         AviaSouls manager = new AviaSouls();
         Ticket ticket1 = new Ticket("SIP", "LED", 7_500, 21, 24);
@@ -167,7 +167,7 @@ public class AviaSoulsTest {
 
     @Test //5 //поиск 1 -граничное значение
 
-    public void shouldLowPriceFromSipToLed2() {
+    public void shouldLowPriceFromMMKToOSL() {
 
         AviaSouls manager = new AviaSouls();
         Ticket ticket1 = new Ticket("SIP", "LED", 7_500, 21, 24);

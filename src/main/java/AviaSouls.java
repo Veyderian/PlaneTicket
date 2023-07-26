@@ -38,8 +38,9 @@ public class AviaSouls {
     /**
      * Метод поиска билетов по маршруту
      *
-     * @param from Откуда вылетаем
-     * @param to   Куда прилетаем
+     * @param from       Откуда вылетаем
+     * @param to         Куда прилетаем
+     * @param comparator
      * @return Массив из подходящих билетов
      */
     public Ticket[] search(String from, String to) {
@@ -56,7 +57,7 @@ public class AviaSouls {
     }
 
 
-    public Ticket[] search(String from, String to, Comparator<Ticket> comparator) {
+    public Ticket[] searchAndSortBy(String from, String to, Comparator<Ticket> comparator) {
         Ticket[] result = new Ticket[0]; // массив для ответа
         for (Ticket ticket : tickets) { // перебираем все билеты
             if (ticket.getFrom().equals(from)) { // совпадает аэропорт вылета
@@ -68,4 +69,12 @@ public class AviaSouls {
         Arrays.sort(result, comparator);
         return result;
     }
+
+
+
+
+
+
+
+
 }

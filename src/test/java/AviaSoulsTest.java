@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Comparator;
 
+
 public class AviaSoulsTest {
 
     @Test //1
@@ -97,6 +98,8 @@ public class AviaSoulsTest {
         manager.add(ticket9);
         manager.add(ticket10);
 
+//        TicketTimeComparator timeComparator = new TicketTimeComparator();
+
         Comparator<Ticket> comparator = new TicketTimeComparator();
 
         Ticket[] expected = {ticket7, ticket1, ticket2, ticket4, ticket9, ticket5, ticket3};
@@ -165,7 +168,7 @@ public class AviaSoulsTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-    @Test //5 //поиск 1 -граничное значение
+    @Test //6 //поиск 1 -граничное значение
 
     public void shouldLowPriceFromMMKToOSL() {
 
